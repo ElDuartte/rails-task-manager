@@ -1,0 +1,15 @@
+<h1>Task</h1>
+<ul class="list-group  text-center">
+  <% @tasks.each do |task| %>
+    <li class="list-group-item">
+      <%=link_to task.title, task_path(task) %>
+      <%= link_to "",
+                task_path(task),
+                method: :delete,
+                :class =>'fa-solid fa-trash'%>
+    </li>
+  <% end %>
+</ul>
+<div>
+  <%= link_to " New task", tasks_new_path, class: 'fa-solid fa-plus text-dark' %>
+</div>
